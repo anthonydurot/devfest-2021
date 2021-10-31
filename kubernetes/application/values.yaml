@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/anthonydurot/devfest-2021:test-cicd
+  repository: ghcr.io/anthonydurot/devfest-2021
   tag: test-cicd
   pullPolicy: IfNotPresent
 
