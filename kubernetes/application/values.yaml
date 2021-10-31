@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: gcr.io/heptio-images/ks-guestbook-demo
-  tag: 0.1
+  repository: ghcr.io/anthonydurot/devfest-2021:test-cicd
+  tag: test-cicd
   pullPolicy: IfNotPresent
 
 service:
