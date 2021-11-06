@@ -26,6 +26,13 @@ resource "google_container_cluster" "primary" {
 
   network    = google_compute_network.vpc.name
   subnetwork = google_compute_subnetwork.subnet.name
+
+
+  ip_allocation_policy {
+    cluster_secondary_range_name  = "services-range"
+    services_secondary_range_name = "pod-range"
+  }
+
 }
 
 # Separately Managed Node Pool
@@ -35,6 +42,7 @@ resource "google_container_node_pool" "primary_nodes" {
   location   = var.region
   cluster    = google_container_cluster.primary.name
   node_count = var.gke_num_nodes
+
 
   node_config {
     oauth_scopes = [
@@ -46,12 +54,14 @@ resource "google_container_node_pool" "primary_nodes" {
       env = var.project_id
     }
 
-    # preemptible  = true
-    machine_type = "e2-micro"
+    preemptible  = true
+    machine_type = "e2-medium"
     tags         = ["gke-node", "${var.project_id}-gke"]
     metadata = {
       disable-legacy-endpoints = "true"
     }
+
+
   }
 }
 
