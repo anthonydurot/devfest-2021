@@ -6,7 +6,7 @@ on:
       - '*'
 
 jobs:
-
+  environment: sandbox
   test:
     name: Test - Units & Integrations
     runs-on: ubuntu-18.04
