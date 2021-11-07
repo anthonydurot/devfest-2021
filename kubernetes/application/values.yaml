@@ -13,10 +13,6 @@ service:
   type: ClusterIP
   port: 8080
 
-env:
-  SPRING_DATASOURCE_URL: "jdbc:mysql://10.64.160.3/devfest_database"
-  SPRING_DATASOURCE_USERNAME: "root"
-  SPRING_DATASOURCE_PASSWORD: "password"
 
 ingress:
   enabled: false
