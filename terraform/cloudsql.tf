@@ -2,6 +2,10 @@ resource "google_sql_database" "database" {
   name     = "devfest_database"
   instance = google_sql_database_instance.instance.name
 }
+resource "google_sql_database" "database_cicd" {
+  name     = "devfest_database_cicd"
+  instance = google_sql_database_instance.instance.name
+}
 
 resource "google_sql_database_instance" "instance" {
   name   = "new-2-devfest-database-instance"
