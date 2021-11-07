@@ -87,7 +87,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: 
-            - "DATASOURCE_URL=$DATASOURCE_URL"
-            - "DATASOURCE_USERNAME: $DATASOURCE_USERNAME"
-            - "DATASOURCE_PASSWORD: $DATASOURCE_PASSWORD"
