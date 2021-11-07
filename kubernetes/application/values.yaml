@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: ghcr.io/anthonydurot/devfest-2021
-  tag: test-cicd
+  tag: main
   pullPolicy: IfNotPresent
 
 service:

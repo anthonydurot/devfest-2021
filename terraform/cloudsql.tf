@@ -4,7 +4,7 @@ resource "google_sql_database" "database" {
 }
 
 resource "google_sql_database_instance" "instance" {
-  name   = "new-devfest-database-instance"
+  name   = "new-2-devfest-database-instance"
   region = "us-central1"
 
   #depends_on = [google_service_networking_connection.private_vpc_connection]
