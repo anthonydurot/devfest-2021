@@ -1,0 +1,30 @@
+package com.ensat.repositories;
+
+import com.ensat.utils.SecretManager;
+import org.springframework.beans.factory.annotation.Autowired;
+
+
+import javax.sql.DataSource;
+import org.springframework.boot.jdbc.DataSourceBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class DatasourceConfig {
+    @Autowired
+    SecretManager secretManager;
+
+    @Bean
+    public DataSource getDataSource() throws Exception{
+        try {
+            DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
+            dataSourceBuilder.url(secretManager.getSecret("dark-gateway-330714", "datasource-url", "latest"));
+            dataSourceBuilder.username(secretManager.getSecret("dark-gateway-330714", "datasource-username", "latest"));
+            dataSourceBuilder.password(secretManager.getSecret("dark-gateway-330714", "datasource-password", "latest"));
+            return dataSourceBuilder.build();
+        } catch (Exception e) {
+            System.out.println(e);
+            throw e;
+        }
+    }
+}
