@@ -78,16 +78,8 @@ jobs:
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         env:
           REPO: ${{ secrets.DOCKER_REPO }}
-          DATASOURCE_URL: ${{ secrets.DATASOURCE_URL}}
-          DATASOURCE_USERNAME: ${{ secrets.DATASOURCE_USERNAME}}
-          DATASOURCE_PASSWORD: ${{ secrets.DATASOURCE_PASSWORD }}
-
         with:
           context: ./application
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: 
-            - "DATASOURCE_URL=$DATASOURCE_URL"
-            - "DATASOURCE_USERNAME: $DATASOURCE_USERNAME"
-            - "DATASOURCE_PASSWORD: $DATASOURCE_PASSWORD"
