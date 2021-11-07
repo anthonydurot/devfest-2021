@@ -6,17 +6,13 @@ replicaCount: 1
 
 image:
   repository: ghcr.io/anthonydurot/devfest-2021
-  tag: main
+  tag: recuperation-java-secrets-manager 
   pullPolicy: IfNotPresent
 
 service:
   type: ClusterIP
   port: 8080
 
-env:
-  SPRING_DATASOURCE_URL: "jdbc:mysql://10.64.160.5/devfest_database"
-  SPRING_DATASOURCE_USERNAME: "root"
-  SPRING_DATASOURCE_PASSWORD: "password"
 
 ingress:
   enabled: false
