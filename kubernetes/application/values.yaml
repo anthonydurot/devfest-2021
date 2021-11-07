@@ -9,6 +9,8 @@ image:
   tag: recuperation-java-secrets-manager 
   pullPolicy: IfNotPresent
 
+serviceAccountName: devfest
+
 service:
   type: ClusterIP
   port: 8080
