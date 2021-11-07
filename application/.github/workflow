@@ -1,9 +1,6 @@
 name: DevFest Pipeline
 
-on:
-  push:
-    branches:
-      - '*'
+on: workflow_dispatch
 
 jobs:
 
