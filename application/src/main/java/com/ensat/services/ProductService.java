@@ -8,7 +8,7 @@ public interface ProductService {
 
     Iterable<Product> listAllProducts();
 
-    Optional<Product> getProductById(Integer id);
+    Product getProductById(Integer id);
 
     Product saveProduct(Product product);
 
