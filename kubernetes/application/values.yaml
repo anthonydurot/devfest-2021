@@ -9,8 +9,6 @@ image:
   tag: recuperation-vault
   pullPolicy: Always
 
-serviceAccountName: devfest
-
 service:
   type: ClusterIP
   port: 8080
