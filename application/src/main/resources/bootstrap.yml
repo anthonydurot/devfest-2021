@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: devfest
+  cloud:
+    vault:
+      token: root
+      scheme: http
+      host: localhost
+      port: 8200
