@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: ghcr.io/anthonydurot/devfest-2021
-  tag: recuperation-java-secrets-manager 
+  tag: iam-db-authent 
   pullPolicy: Always
 
 serviceAccountName: devfest

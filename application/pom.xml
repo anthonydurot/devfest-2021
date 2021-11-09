@@ -59,9 +59,10 @@
             <scope>test</scope>
         </dependency>
 
+
         <dependency>
             <groupId>com.google.cloud</groupId>
-            <artifactId>google-cloud-secretmanager</artifactId>
+            <artifactId>google-cloud-iamcredentials</artifactId>
         </dependency>
 
 
@@ -76,6 +77,16 @@
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+            <version>1.32.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-sqladmin</artifactId>
+            <version>v1-rev20211023-1.32.1</version>
         </dependency>
 
 
