@@ -7,3 +7,8 @@ spring:
       scheme: http
       host: localhost
       port: 8200
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.cloud.config: DEBUG
+
