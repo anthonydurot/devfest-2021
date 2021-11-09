@@ -52,8 +52,8 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-vault-starter-config</artifactId>
-            <version>1.0.0.BUILD-SNAPSHOT</version>
+            <artifactId>spring-cloud-starter-vault-config</artifactId>
+            <version>3.0.4</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
