@@ -14,7 +14,7 @@ service:
   port: 8080
 
 env:
-  SPRING_DATASOURCE_URL: "jdbc:mysql://10.64.160.11/devfest_database_secret_manager"
+  SPRING_DATASOURCE_URL: "jdbc:mysql://10.64.160.11/devfest_database"
   SPRING_DATASOURCE_USERNAME: "root"
   SPRING_DATASOURCE_PASSWORD: "password"
 
