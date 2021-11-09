@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: ghcr.io/anthonydurot/devfest-2021
   tag: main
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 service:
   type: ClusterIP
