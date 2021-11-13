@@ -1,1 +1,0 @@
-kubectl create secret generic devfest-secrett --from-literal=username=anthony --from-literal=password='monsupersecret'
