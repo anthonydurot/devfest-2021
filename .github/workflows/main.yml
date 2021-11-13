@@ -10,9 +10,6 @@ jobs:
   package:
     name: package
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: application
 
     steps:
       - uses: actions/checkout@v2
@@ -25,12 +22,12 @@ jobs:
         run: mvn -B clean package -DskipTests
       #- name: Maven Verify
       #  run: mvn -B clean verify -DskipTests
-      - name: Copy jar artifact
-        run: mkdir artifact && cp target/*.jar artifact
+      #- name: Copy jar artifact
+      #  run: mkdir artifact && cp target/*.jar artifact
       - uses: actions/upload-artifact@v2
         with:
           name: my-java-artifact
-          path: application/artifact
+          path: target
 
           
 
@@ -40,10 +37,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: package
     
-    defaults:
-      run:
-        # Comportement étrange:  Malgré la mention ici du working directory certaines steps ne le prennent pas en compte
-        working-directory: application
     env:
       REGISTRY: ghcr.io
       IMAGE_NAME: ${{ github.repository }}
@@ -59,8 +52,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: my-java-artifact
-          path: application/target
-
+          path: target
       - name: Log in to the Container registry
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
         with:
@@ -79,7 +71,7 @@ jobs:
         env:
           REPO: ${{ secrets.DOCKER_REPO }}
         with:
-          context: ./application
+          context: "./"
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
