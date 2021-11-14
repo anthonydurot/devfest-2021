@@ -25,11 +25,14 @@ public class DatasourceConfig {
             String db_name = "devfest_database_iam";
             String db_instance = "dark-gateway-330714:us-central1:devfest-database-instance-new";
             String db_username = "devfest-sql-user@dark-gateway-330714.iam.gserviceaccount.com";
-            String db_password = accessToken.toString();
+            String db_password = accessToken.getTokenValue();
             dataSourceBuilder.url(String.format("jdbc:mysql:///%s?cloudSqlInstance=%s&socketFactory=com.google.cloud.sql.mysql.SocketFactory", db_name, db_instance));
             dataSourceBuilder.username(db_username);
             dataSourceBuilder.password(db_password);
-            return dataSourceBuilder.build();
+            DataSource dataSource = dataSourceBuilder.build();
+            //System.out.println(dataSource.toString());
+            //System.out.println(dataSource.getConnection().toString());
+            return dataSource;
         } catch (Exception e) {
             System.out.println(e);
             throw e;
